@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+</head>
+<body>
+    <h2>Book Your Show</h2>
+    <form>
+    <label for="movie">Select Movie:</label><br>
+    <select name="movie" id="movie" required>
+      <option value="">--Choose a movie--</option>
+      <option value="">Avengers</option>
+      <option value="">Elio</option>
+      <option value="">How To Train Your Dragon</option>
+      <option value="">Aventure of Iceberg</option>
+    </select>
+      <br>
+      <br>
+
+    <label for="theater">Select theater:</label><br>
+    <select name="theater" id="theater" required>
+      <option value="">--Choose a theater--</option>
+      <option value="">IMAX</option>
+      <option value="">Cineplex</option>
+      <option value="">PVR Cinema</option>
+    </select>
+      <br>
+      <br>
+
+      <label for="showtime">Show Time:</label><br>
+      <input type="radio" id="time1" name="showtime" required>
+      <label for="time1">10:00 AM</label><br>
+      <input type="radio" id="time2" name="showtime" required>
+      <label for="time2">1:00 PM</label><br>
+      <input type="radio" id="time3" name="showtime" required>
+      <label for="time3">4:00 PM</label><br>
+      <input type="radio" id="time4" name="showtime" required>
+      <label for="time4">6:00 PM</label><br>
+      <input type="radio" id="time5" name="showtime" required>
+      <label for="time5">10:00 PM</label>
+      <br>
+      <br>
+
+    <label for="tickets">Number of Tickets:</label><br>
+    <input type="number" id="tickets" name="tickets" min="1" max="10" required>
+    <br>
+    <br>
+
+     <label for="seat">Seat Preference:</label><br>
+      <input type="radio" name="seat">Front
+      <input type="radio" name="seat">Middle
+      <input type="radio" name="seat">Back
+      <input type="radio" name="seat">Aisle
+      <input type="radio" name="seat">No Preferences
+      <br>
+      <br>
+    
+    <label for="name">Your Name:</label><br>
+    <input type="text" id="name" required minlength="7">
+    <br>
+    <br>
+
+   <label for="no">Your Number:</label><br>
+   <input type="tel" id="no" name="no" maxlength="10" required>
+    <br>
+    <br>
+
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" required>
+    <br>
+    <br>
+
+    <label for="comments">Any Comments or Special Requests:</label><br>
+    <textarea id="comments" rows="4" cols="50" placeholder="E.g., Need wheelchair-accessible seat or prefer aisle seat."></textarea>
+    <br>
+    <br>
+ 
+    <input type="checkbox">
+    <label for="">I accept Terms & Conditions</label><br>
+
+    <details>
+        <summary>View Terms & Conditions</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae fugit sint, pariatur nihil at numquam atque saepe enim
+             et esse tempora sapiente ea quisquam ex.</p>
+    </details>
+    <br>
+
+    <input type="submit" value="Book Now">
+    </form>
+</body>
+</html>
