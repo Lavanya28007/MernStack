@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Statistics </title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+ body{
+    width: 70%;
+    height: 70%;
+    border: 5px solid black;
+    margin: 35px 0px 0px 205px;
+    padding: 25px;
+    background-color: #f0f0f0;
+}
+    *{
+        font-family: Roboto;
+
+    }
+     
+h1{
+    text-align: center;
+}
+form{
+    border: 2px solid gray;
+    width: 550px;
+    height: 50px;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-left: 25%;
+}
+
+input{
+    all: unset;
+    font: 30px;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px;
+}
+::placeholder{
+    color: gray;
+    opacity: 0.7;
+}
+ .magni{
+    all:unset;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+}
+.fa-solid{
+    color: gray;
+    fill:currentColor;
+    width: 24px;
+    height: 30px;
+    padding: 15px;
+}
+
+.child{
+    /* background-color: cadetblue; */
+    color: black;
+    height: 25vh;
+    border-radius: 20px;
+    padding: 22px;
+    /* border: 2px solid black; */
+}
+.parent{
+    display: grid;
+    justify-content: center;
+    grid-template-columns:320px 320px 320px;
+    row-gap: 10%;
+    column-gap: 30px;
+
+
+}
+.btn{
+    margin-top: 15%;
+    font-weight:500;
+    text-align: left;
+    background-color:rgb(191, 195, 243);
+    border: 1px solid gray;
+    border-radius: 20px;
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+
+}
+.btn1{
+    margin-top: 15%;
+    font-weight:500;
+    text-align: left;
+    background-color: rgb(247, 198, 245);
+    border: 1px solid gray;
+    border-radius: 20px;
+    height: 40px;
+    width: 160px;
+    padding: 10px;
+
+}
+.btn2{
+    margin-top: 15%;
+    font-weight:500;
+    text-align: left;
+    border: 1px solid gray;
+    border-radius: 20px;
+    height: 40px;
+    width: 130px;
+    padding: 10px;
+
+}
+.fa-chevron-up{
+    padding: 0px 0px 0px 0px;
+    margin: 2px 0px 0px 5px;
+
+}
+
+</style>
+</head>
+<body>
+    <h1>Search for Statistics</h1>
+    <form>
+        <input type="search" id="query" name="q" placeholder="Enter any keyword...."> 
+        <button class="magni">
+           
+           <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </form>
+<br>
+<br>
+<br>
+<br>
+    <div class="parent">
+        <div class="child" style="background-color: rgb(191, 195, 243);">
+            <h3>Price Calculator</h3>
+             <p>How much does 1 Eur in 1963 eual in today's prices? Adjust the rent? </p>
+            <button class="btn">Calculate price changes<i class="fa-solid fa-chevron-up fa-rotate-90"></i> </button>
+        </div>
+        <div class="child" style="background-color: rgb(247, 198, 245);">
+            <h3>Name Statistics</h3>
+            <p>How much does 1 Eur in 1963 eual in today's prices? Adjust the rent? </p>
+            <button class="btn1">Search by name <i class="fa-solid fa-chevron-up fa-rotate-90"></i> </button>
+        </div>
+        <div class="child" style="background-color: rgb(247, 225, 194);">
+            <h3>Stats Table</h3>
+            <p>Find detailed tables with time and creat eyour own </p>
+            <button class="btn2">Go to tables <i class="fa-solid fa-chevron-up fa-rotate-90"></i></button>
+        </div>
+        <div class="child">
+            <h3>Calendar</h3>
+            <p>See the advance release of calendars in 2021</p>
+            <a href="#">Go to Calendar</a>
+        </div>
+        <div class="child">
+            <h3>Subscribe to news</h3>
+            <p>Get the latest statistics releases and publications by e-mail</p>
+            <a href="#">Receive e-mail alerts</a>
+        </div>
+        <div class="child">
+            <h3>API</h3>
+            <p>Easily retrieve and generate Statistics with your own system</p>
+            <a href="#">Open API</a>
+        </div>
+    </div>
+
+</body>
+</html>
