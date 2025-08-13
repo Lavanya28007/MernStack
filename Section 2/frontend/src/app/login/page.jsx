@@ -1,6 +1,17 @@
 'use client';
 import { useFormik } from 'formik';
 import React, { use } from 'react';
+import * as Yup from 'yup';
+
+const LoginSchema = Yup.object().shape({
+   email: Yup.string().email('Invalid email').required('Required'),
+    password: Yup.string().required('password is required')
+    .matches(/[a-z]/, 'lowercase letter is required')
+    .matches(/[A-Z]/, 'uppercase letter is required')
+    .matches(/[0-9]/, 'number is required')
+    .matches(/\W/, 'special character is required') 
+    .min(6, 'Password must be at least 6 characters'),
+ });
 
 const Login = () => {
 
@@ -11,7 +22,8 @@ const loginForm = useFormik({
   },
   onSubmit: (values) => {
     console.log(values);
-  }
+  },
+  validationSchema: LoginSchema,
 });
 
 
@@ -38,6 +50,13 @@ const loginForm = useFormik({
             onChange={loginForm.handleChange}
             value={loginForm.values.email}
             className="w-full border px-4 py-2 rounded-lg  dark:border-neutral-700 dark:text-black"/>
+            {
+                    (loginForm.touched.email && loginForm.errors.email) &&(
+                    <p className="text-xs text-red-600 mt-2">
+                      {loginForm.errors.email}
+                    </p>
+                    )
+                  }
         </div>
         <div>
           <label htmlFor="password" className="mb-2 inline-block text-lg font-semibold text-black sm:text-base">Password</label>
@@ -46,6 +65,13 @@ const loginForm = useFormik({
             onChange={loginForm.handleChange}
             value={loginForm.values.password}
             className="w-full border px-4 py-2 rounded-lg  dark:border-neutral-700 dark:text-black"/>
+            {
+                    (loginForm.touched.password && loginForm.errors.password) &&(
+                    <p className="text-xs text-red-600 mt-2">
+                      {loginForm.errors.password}
+                    </p>
+                    )
+                  } 
         </div>
         <button type="submit" className="block w-full py-3 px-4  justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-hidden focus:bg-blue-700">
           Log in
