@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const UserRouter = require('./routers/UserRouter');
+const ProductRouter = require('./routers/ProductRouter');
+
+// Using the ProductRouter
+app.use('/product', ProductRouter);
 
 const port = 5000;
 
@@ -15,7 +19,7 @@ app.get('/add', (req, res) => {
 //getall
 app.get('/getall', (req, res) => {
     res.send('response from getall');
-});
+}); 
 
 //delete
 app.get('/delete',(req, res)=> {
