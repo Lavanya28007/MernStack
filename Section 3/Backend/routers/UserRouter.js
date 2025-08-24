@@ -1,14 +1,30 @@
 const express = require('express');
-
+const Model = require('../models/UserModel'); // UserModel is in models directory
 const router = express.Router();
 
-router.get('/add', (req, res) => {
-    res.send('add response from user router');
+router.post('/add', (req, res) => {
+    console.log(req.body);
+    
+    new Model(req.body).save()
+    .then((result) => {
+        res.status(200).json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 //getall
 router.get('/getall', (req, res) => {
-    res.send('getall response from user router');
+    Model.find()
+    .then((result) => {
+        res.status(200).json(result);
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 //getbyid

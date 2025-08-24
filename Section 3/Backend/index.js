@@ -1,15 +1,14 @@
-const express = require('express');
+ const express = require('express');
 const app = express();
 const UserRouter = require('./routers/UserRouter');
 const ProductRouter = require('./routers/ProductRouter');
 
-// Using the ProductRouter
-app.use('/product', ProductRouter);
-
 const port = 5000;
 
 // middleware
+app.use(express.json()); // to parse JSON bodies
 app.use('/user', UserRouter);
+app.use('/product', ProductRouter);
 
 //endpoint
 app.get('/add', (req, res) => {
