@@ -27,15 +27,60 @@ router.get('/getall', (req, res) => {
     });
 });
 
+//url params
+router.get('/getbycity/:city', (req, res) =>{
+    Model.find({city: req.params.city}) // city is field in UserModel
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+router.get('/getbyemail/:email', (req, res) =>{
+ Model.findOne({email: req.params.email}) // email is field in UserModel
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});  
+
 //getbyid
-router.get('/getbyid', (req, res) => {
-    res.send('getbyid response from user router');
+router.get('/getbyid/:id', (req, res) =>{
+  // Model.findOne({_id: req.params.id})
+ Model.findById(req.params.id)    // id is field in UserModel
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});    
+
+//deletebyid
+router.delete('/deletetbyid/:id', (req, res) => {
+     Model.findByIdAndDelete(req.params.id)   
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
-//delete
-router.get('/delete', (req, res) => {
-    res.send('delete response from user router');
+router.put('/update/:id', (req, res) => {
+     Model.findByIdAndUpdate(req.params.id, req.body, { new: true })   
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
+
+                                                                                                           
 
 //update
 router.get('/update', (req, res) => {

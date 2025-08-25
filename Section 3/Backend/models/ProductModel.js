@@ -1,7 +1,7 @@
 const { Schema, model } = require('../connection');
 
 const productSchema = new Schema({
-   name: String,
+   name: { type: String, unique: true, require: true },
    price: { type: Number, require: true, min: 1 },
    description: { brand: String, warranty: Boolean },
    category: {
