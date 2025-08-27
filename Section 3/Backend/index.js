@@ -1,11 +1,14 @@
-  const express = require('express');
+const express = require('express');
 const app = express();
 const UserRouter = require('./routers/UserRouter');
 const ProductRouter = require('./routers/ProductRouter');
-
+const cors = require('cors');
 const port = 5000;
 
 // middleware
+app.use(cors({
+    origin: ['http://localhost:3000']
+}));
 app.use(express.json()); // to parse JSON bodies
 app.use('/user', UserRouter);
 app.use('/product', ProductRouter);

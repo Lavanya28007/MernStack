@@ -28,14 +28,52 @@ router.get('/getall',(req,res) => {
     });
 });
 
+//url params
+router.get('/getbyprice/:price', (req, res) =>{
+    Model.find({price: req.params.price}) // city is field in UserModel
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+
 // Get product by ID
-router.get('/getbyid', (req, res) => {
-    res.send('getbyid response from product router');
-});
+router.get('/getbyid/:id', (req, res) =>{
+  // Model.findOne({_id: req.params.id})
+ Model.findById(req.params.id)    // id is field in UserModel
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});  
+
 // Delete a product
-router.get('/delete', (req, res) => {
-    res.send('delete response from product router');
+router.delete('/deletetbyid/:id', (req, res) => {
+     Model.findByIdAndDelete(req.params.id)   
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
+
+router.put('/update/:id', (req, res) => {
+     Model.findByIdAndUpdate(req.params.id, req.body, { new: true })   
+    .then((result) => {
+        res.status(200).json(result);
+    }).catch((err) => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
+
+
 // Update a product
 router.get('/update', (req, res) => {
     res.send('update response from product router');
