@@ -26,7 +26,7 @@ const SignupSchema = Yup.object().shape({
     .oneOf([Yup.ref('password'), null], 'Passwords must match')
  });
 
-const Signup = () => {
+const Signup2 = () => {
 
   // initialization 
   const signupForm = useFormik({
@@ -41,7 +41,7 @@ const Signup = () => {
     onSubmit: (values, {resetForm}) => {
       console.log(values);   
       
-      axios.post('http://localhost:5000/user/add', values)
+      axios.post('http://localhost:5000/product/add', values)
       .then((result) => {
         toast.success('User registered successfully');
         resetForm();
@@ -64,7 +64,7 @@ const Signup = () => {
 
   return (
     <>
-      <div className="relative bg-gradient-to-bl from-purple-500 via-transparent to-pink-500 dark:via-transparent">
+      <div className="relative bg-gradient-to-bl from-blue-500 via-transparent to-yellow-500 dark:via-transparent">
         <div className="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
           <form onSubmit={signupForm.handleSubmit}>
             <div className="lg:max-w-lg lg:mx-auto lg:me-0 ms-auto">
@@ -225,4 +225,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Signup2;
